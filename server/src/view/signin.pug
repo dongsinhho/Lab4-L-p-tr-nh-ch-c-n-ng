@@ -1,0 +1,26 @@
+extend layout.pug 
+block body 
+    .container-fluid
+        .row 
+            .offset-md-4.col-md-4
+                h2 Sign in
+                .flex
+                    button.btn.btn-primary Sign in with Facebook 
+                    button.btn.btn-danger Sign in with Google 
+                .breakcum OR 
+                //- FORM -//
+                if fail 
+                    .alert.alert-danger(role='alert')=fail
+                form(action="", method="post") 
+                    .form-group
+                        label(for="") Username 
+                        input.form-control(type="text", name="username") 
+                    .form-group 
+                        label(for="") Password 
+                        input.form-control(type="password", name="password")
+                    button.btn.btn-success Sign in 
+                    a(href="/")  Forgot password?
+                    hr
+                    a(href="/user/register").btn.btn-info Sign up New Account
+
+

@@ -1,0 +1,35 @@
+extend layout.pug 
+block body 
+    .container-fluid
+        .row 
+            .offset-md-4.col-md-4
+                h2 Sign up
+                //- FORM -//
+                form( method="post") 
+                    if fail 
+                        .alert.alert-danger(role='alert')=fail
+                    .form-group
+                        label(for="user") Username*
+                        input.form-control(type="text",name="user",id="user", required) 
+                    .form-group 
+                        label(for="name") Name
+                        input.form-control(type="text",name="name",id="name")
+                    .form-group
+                        label(for="mail") Email*
+                        input.form-control(type="text", name="mail",id="mail", required) 
+                    .form-group
+                        label(for="pass") Password*
+                        input.form-control(type="password",name="pass",id="pass", required) 
+                    .form-group
+                        label(for="pass2") Confirm Password*
+                        input.form-control(type="password", name="pass2",id="pass2", required) 
+                    .form-group
+                        label(for="phone") Phone number 
+                        input.form-control(type="text", name="phone",id="phone") 
+                    button.btn.btn-primary Register 
+                    hr
+                a(href="/user/login").btn.btn-primary Already have account ? Sign in
+    script 
+        include ../public/handleform.js
+
+
